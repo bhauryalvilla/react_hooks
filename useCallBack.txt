@@ -1,0 +1,18 @@
+import "./styles.css";
+import { useCallback, useState } from "react";
+import Header from "./components/Header.jsx";
+
+export default function App() {
+  const [counter, setCounter] = useState(0);
+
+  const newfn = useCallback(() => {}, []);
+
+  return (
+    <>
+      <Header newfn={newfn} />
+      <h1>{counter}</h1>
+      <button onClick={() => setCounter((prev) => prev + 1)}>+1</button>
+    </>
+  );
+}
+

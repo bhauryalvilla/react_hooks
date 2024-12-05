@@ -1,0 +1,27 @@
+import "./styles.css";
+import { useState } from "react";
+
+export default function App() {
+  const [car, setCar] = useState({
+    brand: "Ferrari",
+    color: "Red",
+    model: "Roma",
+    year: "2023",
+  });
+
+  function updateObj() {
+    setCar((prev) => {
+      return { ...prev, brand: "BMW" };
+    });
+  }
+  //let color = "Red";
+  return (
+    <>
+      <h1>My {car.brand}</h1>
+      <h2>
+        It is a {car.color} {car.model} from {car.year}
+      </h2>
+      <button onClick={updateObj}>Click</button>
+    </>
+  );
+}
